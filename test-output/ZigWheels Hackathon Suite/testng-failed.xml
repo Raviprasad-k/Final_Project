@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="tests" name="Failed suite [ZigWheels Hackathon Suite]">
+  <listeners>
+    <listener class-name="com.zigwheels.listeners.TestListener"/>
+  </listeners>
+  <test thread-count="2" parallel="tests" name="Run on Edge(failed)">
+    <parameter name="browser" value="edge"/>
+    <classes>
+      <class name="com.zigwheels.tests.ZigWheelsScenariosTest">
+        <methods>
+          <include name="scenario3_electricScootersOLA"/>
+          <include name="resetPage"/>
+          <include name="scenario4_usedCarsChennaiSortAndValidate"/>
+          <include name="scenario5_profileGoogleInvalidLogin"/>
+          <include name="setUp"/>
+          <include name="scenario2_upcomingBikes"/>
+          <include name="scenario0_writeAllLinksAndValidate"/>
+          <include name="scenario6_searchAndCompareCars"/>
+          <include name="tearDown"/>
+          <include name="scenario1_popularCars"/>
+        </methods>
+      </class> <!-- com.zigwheels.tests.ZigWheelsScenariosTest -->
+    </classes>
+  </test> <!-- Run on Edge(failed) -->
+</suite> <!-- Failed suite [ZigWheels Hackathon Suite] -->
