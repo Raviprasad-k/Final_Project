@@ -16,19 +16,34 @@ public class DriverFactory {
         String browserType = browser.toLowerCase();
 
         switch (browserType) {
-            case "chrome":
-                ChromeOptions co = new ChromeOptions();
-                co.addArguments("--disable-notifications","--start-maximized");
-                if (headless) co.addArguments("--headless=new");
-                driver = new ChromeDriver(co);
-                break;
-
-            case "edge":
-                EdgeOptions eo = new EdgeOptions();
-                eo.addArguments("--disable-notifications","--start-maximized");
-                if (headless) eo.addArguments("--headless=new");
-                driver = new EdgeDriver(eo);
-                break;
+		        case "chrome":
+		            ChromeOptions co = new ChromeOptions();
+		            // Add window-size here!
+		            co.addArguments("--disable-notifications", "--window-size=1920,1080", "--start-maximized");
+		            if (headless) co.addArguments("--headless=new");
+		            driver = new ChromeDriver(co);
+		            break;
+		
+		        case "edge":
+		            EdgeOptions eo = new EdgeOptions();
+		            // Add window-size here!
+		            eo.addArguments("--disable-notifications", "--window-size=1920,1080", "--start-maximized");
+		            if (headless) eo.addArguments("--headless=new");
+		            driver = new EdgeDriver(eo);
+		            break;
+//            case "chrome":
+//                ChromeOptions co = new ChromeOptions();
+//                co.addArguments("--disable-notifications","--start-maximized");
+//                if (headless) co.addArguments("--headless=new");
+//                driver = new ChromeDriver(co);
+//                break;
+//
+//            case "edge":
+//                EdgeOptions eo = new EdgeOptions();
+//                eo.addArguments("--disable-notifications","--start-maximized");
+//                if (headless) eo.addArguments("--headless=new");
+//                driver = new EdgeDriver(eo);
+//                break;
 
             case "firefox":
                 FirefoxOptions fo = new FirefoxOptions();
