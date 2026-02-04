@@ -20,21 +20,17 @@ public class ElectricScootersPage {
     @FindBy(xpath = "*//div[@class='ht-20' and normalize-space()='Ola Electric']")
     private WebElement olaFilter;
     
-    @FindBy(xpath = "//a[@title='Ola Electric Scooters']") private WebElement olalink;
-    //div[@class='ht-20' and normalize-space()='Ola Electric']
+    @FindBy(xpath = "//a[@title='Ola Electric Scooters']") 
+    private WebElement olalink;
+    
     public void filterOLA() throws InterruptedException {
-//        try { olaFilter.click(); } catch (Exception e) {
-//
-//        }
     	
     	 Actions actions = new Actions(driver);
-         
          actions.scrollToElement(olalink).perform();
+         
         JavascriptExecutor e=(JavascriptExecutor) driver;
         e.executeScript("arguments[0].scrollIntoView()",olaFilter);
-        Thread.sleep(2000);
         e.executeScript("arguments[0].click();",olaFilter);
-//        olaFilter.click();
     }
 
     public List<List<String>> scrapeModels() {
@@ -44,29 +40,21 @@ public class ElectricScootersPage {
         if (items.isEmpty()) {
             items = driver.findElements(By.xpath("//a[contains(@href,'/scooters/')]/ancestor::*[self::li or self::div][1]"));
         }
+        
         int idx=1;
         for(int i=0;i<items.size();i++){
             try {
-                //WebElement nameEl = it.findElement(By.xpath(".//a[1]"));
                 WebElement it=items.get(i);
                 WebElement pt=prices.get(i);
                 String name = it.getText().trim();
                 String price = "";
                 try {
-                    //WebElement priceEl = driver.findElement(By.xpath(".//*[contains(text(),'Rs')"));
                     price = pt.getText().trim();
                 } catch (NoSuchElementException nse) { price = "NA"; }
                 if (!name.isEmpty()) rows.add(List.of(String.valueOf(idx++), name, price));
             } catch (Exception ignored) {}
 
         }
-//        for(int i=0;i<items.size();i++){
-//            String price="";
-//            try {
-//                    WebElement priceEl = driver.findElement(By.xpath("//div[@class='clr-bl']"));
-//                    price = priceEl.getText().trim();
-//                } catch (NoSuchElementException nse) { price = "NA"; }
-//        }
 
         return rows;
     }

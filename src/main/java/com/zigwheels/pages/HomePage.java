@@ -10,7 +10,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.time.Duration;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class HomePage {
     private final WebDriver driver;

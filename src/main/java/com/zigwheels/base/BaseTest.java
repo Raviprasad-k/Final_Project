@@ -27,7 +27,7 @@ public class BaseTest {
     private static final String RUN_STAMP = LocalDateTime.now().format(TS_FORMAT);
 
     @Parameters({"browser"})
-    @BeforeClass(alwaysRun = true) // 🔹 Changed from BeforeMethod to BeforeClass
+    @BeforeClass(alwaysRun = true) 
     public void setUp(@Optional("chrome") String browser) {
         this.browserName = browser;
 

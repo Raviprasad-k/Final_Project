@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-ZigWheels_Suite" class="navigator-link">
-              <span class="suite-name border-failed">ZigWheels Suite</span>
+              <span class="suite-name border-passed">ZigWheels Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -56,7 +56,7 @@
                 </li>
                 <li>
                   <a href="#" panel-name="testlist-ZigWheels_Suite" class="navigator-link ">
-                    <span class="test-stats">2 tests</span>
+                    <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,21 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">10 methods, 1 failed,   9 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-ZigWheels_Suite" class="hide-methods failed suite-ZigWheels_Suite"> (hide)</a> <!-- hide-methods failed suite-ZigWheels_Suite -->
-                      <a href="#" panel-name="suite-ZigWheels_Suite" class="show-methods failed suite-ZigWheels_Suite"> (show)</a> <!-- show-methods failed suite-ZigWheels_Suite -->
-                    </span>
-                    <div class="method-list-content failed suite-ZigWheels_Suite">
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-ZigWheels_Suite" title="com.zigwheels.tests.ZigWheelsScenariosTest" class="method navigator-link" hash-for-method="scenario5_usedCarsChennaiSortAndValidate">scenario5_usedCarsChennaiSortAndValidate</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-ZigWheels_Suite -->
+                    <span class="method-stats">5 methods,   5 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -123,16 +109,6 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-ZigWheels_Suite" title="com.zigwheels.tests.ZigWheelsScenariosTest" class="method navigator-link" hash-for-method="scenario2_popularCars">scenario2_popularCars</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-ZigWheels_Suite" title="com.zigwheels.tests.ZigWheelsScenariosTest" class="method navigator-link" hash-for-method="scenario4_electricScootersOLA">scenario4_electricScootersOLA</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-ZigWheels_Suite" title="com.zigwheels.tests.ZigWheelsScenariosTest" class="method navigator-link" hash-for-method="scenario4_electricScootersOLA">scenario4_electricScootersOLA</a> <!-- method navigator-link -->
                       </span>
                       <br/>
@@ -144,16 +120,6 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-ZigWheels_Suite" title="com.zigwheels.tests.ZigWheelsScenariosTest" class="method navigator-link" hash-for-method="scenario6_profileGoogleInvalidLogin">scenario6_profileGoogleInvalidLogin</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-ZigWheels_Suite" title="com.zigwheels.tests.ZigWheelsScenariosTest" class="method navigator-link" hash-for-method="scenario6_profileGoogleInvalidLogin">scenario6_profileGoogleInvalidLogin</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-ZigWheels_Suite" title="com.zigwheels.tests.ZigWheelsScenariosTest" class="method navigator-link" hash-for-method="scenario7_searchAndCompareCars">scenario7_searchAndCompareCars</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -173,32 +139,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-ZigWheels_Suite" class="panel ZigWheels_Suite">
-          <div class="suite-ZigWheels_Suite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">com.zigwheels.tests.ZigWheelsScenariosTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="scenario5_usedCarsChennaiSortAndValidate">
-                  </a> <!-- scenario5_usedCarsChennaiSortAndValidate -->
-                  <span class="method-name">scenario5_usedCarsChennaiSortAndValidate</span>
-                  <div class="stack-trace">java.lang.IllegalArgumentException: The maximum column width for an individual cell is 255 characters.
-	at org.apache.poi.xssf.usermodel.XSSFSheet.setColumnWidth(XSSFSheet.java:2595)
-	at com.zigwheels.utils.ExcelUtils.writeSheet(ExcelUtils.java:80)
-	at com.zigwheels.tests.ZigWheelsScenariosTest.scenario5_usedCarsChennaiSortAndValidate(ZigWheelsScenariosTest.java:103)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-... Removed 16 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-ZigWheels_Suite-class-failed -->
           <div class="suite-ZigWheels_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -214,20 +154,6 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="scenario2_popularCars">
-                  </a> <!-- scenario2_popularCars -->
-                  <span class="method-name">scenario2_popularCars</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="scenario4_electricScootersOLA">
-                  </a> <!-- scenario4_electricScootersOLA -->
-                  <span class="method-name">scenario4_electricScootersOLA</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
                   <a name="scenario4_electricScootersOLA">
                   </a> <!-- scenario4_electricScootersOLA -->
                   <span class="method-name">scenario4_electricScootersOLA</span>
@@ -245,20 +171,6 @@
                   <a name="scenario6_profileGoogleInvalidLogin">
                   </a> <!-- scenario6_profileGoogleInvalidLogin -->
                   <span class="method-name">scenario6_profileGoogleInvalidLogin</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="scenario6_profileGoogleInvalidLogin">
-                  </a> <!-- scenario6_profileGoogleInvalidLogin -->
-                  <span class="method-name">scenario6_profileGoogleInvalidLogin</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="scenario7_searchAndCompareCars">
-                  </a> <!-- scenario7_searchAndCompareCars -->
-                  <span class="method-name">scenario7_searchAndCompareCars</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -281,7 +193,7 @@
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite thread-count=&quot;2&quot; parallel=&quot;tests&quot; name=&quot;ZigWheels Suite&quot;&gt;
   &lt;listeners&gt;
-    &lt;listener class-name=&quot;com.zigwheels.listeners.TestListener&quot;/&gt;
+    &lt;listener class-name=&quot;com.zigwheels.utils.TestListener&quot;/&gt;
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;2&quot; parallel=&quot;tests&quot; name=&quot;Chrome Tests&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
@@ -289,12 +201,6 @@
       &lt;class name=&quot;com.zigwheels.tests.ZigWheelsScenariosTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Chrome Tests --&gt;
-  &lt;test thread-count=&quot;2&quot; parallel=&quot;tests&quot; name=&quot;Edge Tests&quot;&gt;
-    &lt;parameter name=&quot;browser&quot; value=&quot;edge&quot;/&gt;
-    &lt;classes&gt;
-      &lt;class name=&quot;com.zigwheels.tests.ZigWheelsScenariosTest&quot;/&gt;
-    &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Edge Tests --&gt;
 &lt;/suite&gt; &lt;!-- ZigWheels Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -307,9 +213,6 @@
             <ul>
               <li>
                 <span class="test-name">Chrome Tests (1 class)</span>
-              </li>
-              <li>
-                <span class="test-name">Edge Tests (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -335,47 +238,27 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(10);
+data.addRows(5);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'scenario7_searchAndCompareCars')
 data.setCell(0, 2, 'com.zigwheels.tests.ZigWheelsScenariosTest')
-data.setCell(0, 3, 16008);
+data.setCell(0, 3, 14332);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'scenario7_searchAndCompareCars')
+data.setCell(1, 1, 'scenario5_usedCarsChennaiSortAndValidate')
 data.setCell(1, 2, 'com.zigwheels.tests.ZigWheelsScenariosTest')
-data.setCell(1, 3, 9468);
+data.setCell(1, 3, 11432);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'scenario5_usedCarsChennaiSortAndValidate')
+data.setCell(2, 1, 'scenario2_popularCars')
 data.setCell(2, 2, 'com.zigwheels.tests.ZigWheelsScenariosTest')
-data.setCell(2, 3, 8502);
+data.setCell(2, 3, 10739);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'scenario5_usedCarsChennaiSortAndValidate')
+data.setCell(3, 1, 'scenario4_electricScootersOLA')
 data.setCell(3, 2, 'com.zigwheels.tests.ZigWheelsScenariosTest')
-data.setCell(3, 3, 8364);
+data.setCell(3, 3, 9555);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'scenario2_popularCars')
+data.setCell(4, 1, 'scenario6_profileGoogleInvalidLogin')
 data.setCell(4, 2, 'com.zigwheels.tests.ZigWheelsScenariosTest')
-data.setCell(4, 3, 7740);
-data.setCell(5, 0, 5)
-data.setCell(5, 1, 'scenario2_popularCars')
-data.setCell(5, 2, 'com.zigwheels.tests.ZigWheelsScenariosTest')
-data.setCell(5, 3, 7270);
-data.setCell(6, 0, 6)
-data.setCell(6, 1, 'scenario6_profileGoogleInvalidLogin')
-data.setCell(6, 2, 'com.zigwheels.tests.ZigWheelsScenariosTest')
-data.setCell(6, 3, 7238);
-data.setCell(7, 0, 7)
-data.setCell(7, 1, 'scenario6_profileGoogleInvalidLogin')
-data.setCell(7, 2, 'com.zigwheels.tests.ZigWheelsScenariosTest')
-data.setCell(7, 3, 7099);
-data.setCell(8, 0, 8)
-data.setCell(8, 1, 'scenario4_electricScootersOLA')
-data.setCell(8, 2, 'com.zigwheels.tests.ZigWheelsScenariosTest')
-data.setCell(8, 3, 6065);
-data.setCell(9, 0, 9)
-data.setCell(9, 1, 'scenario4_electricScootersOLA')
-data.setCell(9, 2, 'com.zigwheels.tests.ZigWheelsScenariosTest')
-data.setCell(9, 3, 4293);
+data.setCell(4, 3, 8265);
 window.suiteTableData['ZigWheels_Suite']= { tableData: data, tableDiv: 'times-div-ZigWheels_Suite'}
 return data;
 }
@@ -395,17 +278,13 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-ZigWheels_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">4 ignored methods</span>
+            <span class="header-content">2 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
               <span class="ignored-class-name">com.zigwheels.tests.ZigWheelsScenariosTest</span>
               <div class="ignored-methods-div">
                 <span class="ignored-method-name">scenario1_writeAllLinksAndValidate</span>
-                <br/>
-                <span class="ignored-method-name">scenario1_writeAllLinksAndValidate</span>
-                <br/>
-                <span class="ignored-method-name">scenario3_upcomingBikes</span>
                 <br/>
                 <span class="ignored-method-name">scenario3_upcomingBikes</span>
                 <br/>
@@ -424,99 +303,49 @@ return data;
                 <span class="method-name">setUp(chrome)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
-              <div class="configuration-class before">
-                <span class="method-name">setUp(edge)</span>
-                <span class="method-start">0 ms</span>
-              </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">scenario2_popularCars</span>
-                <span class="method-start">13005 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">scenario2_popularCars</span>
-                <span class="method-start">13493 ms</span>
+                <span class="method-start">19263 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">resetPage</span>
-                <span class="method-start">20763 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method after">
-                <span class="method-name">resetPage</span>
-                <span class="method-start">20766 ms</span>
+                <span class="method-start">30370 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">scenario4_electricScootersOLA</span>
-                <span class="method-start">21081 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">scenario4_electricScootersOLA</span>
-                <span class="method-start">21962 ms</span>
+                <span class="method-start">32330 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">resetPage</span>
-                <span class="method-start">26260 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method after">
-                <span class="method-name">resetPage</span>
-                <span class="method-start">27149 ms</span>
+                <span class="method-start">42423 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">scenario5_usedCarsChennaiSortAndValidate</span>
-                <span class="method-start">27529 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">scenario5_usedCarsChennaiSortAndValidate</span>
-                <span class="method-start">28235 ms</span>
+                <span class="method-start">46025 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">resetPage</span>
-                <span class="method-start">36035 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method after">
-                <span class="method-name">resetPage</span>
-                <span class="method-start">36899 ms</span>
+                <span class="method-start">57937 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">scenario6_profileGoogleInvalidLogin</span>
-                <span class="method-start">37578 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">scenario6_profileGoogleInvalidLogin</span>
-                <span class="method-start">38770 ms</span>
+                <span class="method-start">61352 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">resetPage</span>
-                <span class="method-start">44688 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method after">
-                <span class="method-name">resetPage</span>
-                <span class="method-start">46014 ms</span>
+                <span class="method-start">71004 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">scenario7_searchAndCompareCars</span>
-                <span class="method-start">46112 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">scenario7_searchAndCompareCars</span>
-                <span class="method-start">46439 ms</span>
+                <span class="method-start">74604 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">resetPage</span>
-                <span class="method-start">55912 ms</span>
+                <span class="method-start">89398 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">57053 ms</span>
-              </div> <!-- configuration-class after -->
-              <div class="configuration-method after">
-                <span class="method-name">resetPage</span>
-                <span class="method-start">62134 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-class after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">63529 ms</span>
+                <span class="method-start">93032 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

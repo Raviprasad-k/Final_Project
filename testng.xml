@@ -2,7 +2,7 @@
 
 <suite name="ZigWheels Suite" verbose="1" parallel="tests" thread-count="2">
     <listeners>
-        <listener class-name="com.zigwheels.listeners.TestListener"/>
+        <listener class-name="com.zigwheels.utils.TestListener"/>
     </listeners>
 	
 	 <test name="Chrome Tests">
@@ -13,10 +13,10 @@
         </test> 
 
 
-    <!--<test name="Edge Tests">
+    <!-- <test name="Edge Tests">
         <parameter name="browser" value="edge"/>
         <classes>
             <class name="com.zigwheels.tests.ZigWheelsScenariosTest"/>
         </classes>
-    </test>-->
+    </test> -->
 </suite>
