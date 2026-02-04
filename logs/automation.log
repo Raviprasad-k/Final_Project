@@ -156,3 +156,62 @@
 2026-02-04 17:10:19 INFO  ExcelUtils - Wrote sheet 'CarComparison' with 22 rows into artifacts\zigwheels_automation_chrome_20260204_170839.xlsx
 2026-02-04 17:10:24 INFO  ZigWheelsScenariosTest - Test completed. Navigating back to Home.
 2026-02-04 17:10:36 INFO  ZigWheelsScenariosTest - Browser session ended.
+2026-02-04 17:39:14 INFO  ExcelUtils - Created workbook: artifacts\zigwheels_automation_chrome_20260204_173901.xlsx
+2026-02-04 17:39:14 INFO  ZigWheelsScenariosTest - Excel initialized at: artifacts\zigwheels_automation_chrome_20260204_173901.xlsx
+2026-02-04 17:39:33 INFO  ExcelUtils - Wrote sheet 'PopularCars' with 20 rows into artifacts\zigwheels_automation_chrome_20260204_173901.xlsx
+2026-02-04 17:39:35 INFO  ZigWheelsScenariosTest - Test completed. Navigating back to Home.
+2026-02-04 17:39:39 INFO  ZigWheelsScenariosTest - Test completed. Navigating back to Home.
+2026-02-04 17:39:48 INFO  ExcelUtils - Wrote sheet 'UsedCars_Chennai' with 6 rows into artifacts\zigwheels_automation_chrome_20260204_173901.xlsx
+2026-02-04 17:39:52 INFO  ZigWheelsScenariosTest - Test completed. Navigating back to Home.
+2026-02-04 17:39:56 INFO  ZigWheelsScenariosTest - Test completed. Navigating back to Home.
+2026-02-04 17:40:05 INFO  ExcelUtils - Wrote sheet 'CarComparison' with 22 rows into artifacts\zigwheels_automation_chrome_20260204_173901.xlsx
+2026-02-04 17:40:07 INFO  ZigWheelsScenariosTest - Test completed. Navigating back to Home.
+2026-02-04 17:40:15 INFO  ZigWheelsScenariosTest - Browser session ended.
+2026-02-04 17:54:27 INFO  ExcelUtils - Created workbook: artifacts\zigwheels_automation_chrome_20260204_175405.xlsx
+2026-02-04 17:54:27 INFO  ZigWheelsScenariosTest - Excel initialized at: artifacts\zigwheels_automation_chrome_20260204_175405.xlsx
+2026-02-04 17:54:49 INFO  ExcelUtils - Wrote sheet 'PopularCars' with 20 rows into artifacts\zigwheels_automation_chrome_20260204_175405.xlsx
+2026-02-04 17:54:54 INFO  ZigWheelsScenariosTest - Test completed. Navigating back to Home.
+2026-02-04 17:55:02 INFO  ExcelUtils - Wrote sheet 'ElectricScooters_OLA' with 6 rows into artifacts\zigwheels_automation_chrome_20260204_175405.xlsx
+2026-02-04 17:55:06 INFO  ZigWheelsScenariosTest - Test completed. Navigating back to Home.
+2026-02-04 17:55:17 INFO  ExcelUtils - Wrote sheet 'UsedCars_Chennai' with 6 rows into artifacts\zigwheels_automation_chrome_20260204_175405.xlsx
+2026-02-04 17:55:23 INFO  ZigWheelsScenariosTest - Test completed. Navigating back to Home.
+2026-02-04 17:55:37 INFO  ZigWheelsScenariosTest - Test completed. Navigating back to Home.
+2026-02-04 17:55:50 INFO  ExcelUtils - Wrote sheet 'CarComparison' with 22 rows into artifacts\zigwheels_automation_chrome_20260204_175405.xlsx
+2026-02-04 17:55:53 INFO  ZigWheelsScenariosTest - Test completed. Navigating back to Home.
+2026-02-04 17:56:03 INFO  ZigWheelsScenariosTest - Browser session ended.
+2026-02-04 17:58:23 INFO  ExcelUtils - Created workbook: artifacts\zigwheels_automation_chrome_20260204_175812.xlsx
+2026-02-04 17:58:23 INFO  ZigWheelsScenariosTest - Excel initialized at: artifacts\zigwheels_automation_chrome_20260204_175812.xlsx
+2026-02-04 17:58:39 INFO  ExcelUtils - Wrote sheet 'PopularCars' with 20 rows into artifacts\zigwheels_automation_chrome_20260204_175812.xlsx
+2026-02-04 17:58:41 INFO  ZigWheelsScenariosTest - Test completed. Navigating back to Home.
+2026-02-04 17:58:46 INFO  ExcelUtils - Wrote sheet 'ElectricScooters_OLA' with 6 rows into artifacts\zigwheels_automation_chrome_20260204_175812.xlsx
+2026-02-04 17:58:48 INFO  ZigWheelsScenariosTest - Test completed. Navigating back to Home.
+2026-02-04 17:58:55 INFO  ExcelUtils - Wrote sheet 'UsedCars_Chennai' with 6 rows into artifacts\zigwheels_automation_chrome_20260204_175812.xlsx
+2026-02-04 17:58:59 INFO  ZigWheelsScenariosTest - Test completed. Navigating back to Home.
+2026-02-04 17:59:03 INFO  ZigWheelsScenariosTest - Test completed. Navigating back to Home.
+2026-02-04 17:59:11 INFO  ExcelUtils - Wrote sheet 'CarComparison' with 22 rows into artifacts\zigwheels_automation_chrome_20260204_175812.xlsx
+2026-02-04 17:59:13 INFO  ZigWheelsScenariosTest - Test completed. Navigating back to Home.
+2026-02-04 17:59:22 INFO  ZigWheelsScenariosTest - Browser session ended.
+2026-02-04 18:02:38 INFO  ExcelUtils - Created workbook: artifacts\zigwheels_automation_chrome_20260204_180219.xlsx
+2026-02-04 18:02:38 INFO  ZigWheelsScenariosTest - Excel initialized at: artifacts\zigwheels_automation_chrome_20260204_180219.xlsx
+2026-02-04 18:02:58 INFO  ExcelUtils - Wrote sheet 'PopularCars' with 20 rows into artifacts\zigwheels_automation_chrome_20260204_180219.xlsx
+2026-02-04 18:03:03 INFO  ZigWheelsScenariosTest - Test completed. Navigating back to Home.
+2026-02-04 18:03:11 INFO  ExcelUtils - Wrote sheet 'ElectricScooters_OLA' with 6 rows into artifacts\zigwheels_automation_chrome_20260204_180219.xlsx
+2026-02-04 18:03:15 INFO  ZigWheelsScenariosTest - Test completed. Navigating back to Home.
+2026-02-04 18:03:26 INFO  ExcelUtils - Wrote sheet 'UsedCars_Chennai' with 6 rows into artifacts\zigwheels_automation_chrome_20260204_180219.xlsx
+2026-02-04 18:03:35 INFO  ZigWheelsScenariosTest - Test completed. Navigating back to Home.
+2026-02-04 18:03:48 INFO  ZigWheelsScenariosTest - Test completed. Navigating back to Home.
+2026-02-04 18:04:00 INFO  ExcelUtils - Wrote sheet 'CarComparison' with 22 rows into artifacts\zigwheels_automation_chrome_20260204_180219.xlsx
+2026-02-04 18:04:04 INFO  ZigWheelsScenariosTest - Test completed. Navigating back to Home.
+2026-02-04 18:04:14 INFO  ZigWheelsScenariosTest - Browser session ended.
+2026-02-04 18:17:36 INFO  ExcelUtils - Created workbook: artifacts\zigwheels_automation_chrome_20260204_181711.xlsx
+2026-02-04 18:17:36 INFO  ZigWheelsScenariosTest - Excel initialized at: artifacts\zigwheels_automation_chrome_20260204_181711.xlsx
+2026-02-04 18:18:00 INFO  ExcelUtils - Wrote sheet 'PopularCars' with 20 rows into artifacts\zigwheels_automation_chrome_20260204_181711.xlsx
+2026-02-04 18:18:04 INFO  ZigWheelsScenariosTest - Test completed. Navigating back to Home.
+2026-02-04 18:18:12 INFO  ExcelUtils - Wrote sheet 'ElectricScooters_OLA' with 6 rows into artifacts\zigwheels_automation_chrome_20260204_181711.xlsx
+2026-02-04 18:18:14 INFO  ZigWheelsScenariosTest - Test completed. Navigating back to Home.
+2026-02-04 18:18:23 INFO  ExcelUtils - Wrote sheet 'UsedCars_Chennai' with 6 rows into artifacts\zigwheels_automation_chrome_20260204_181711.xlsx
+2026-02-04 18:18:27 INFO  ZigWheelsScenariosTest - Test completed. Navigating back to Home.
+2026-02-04 18:18:38 INFO  ZigWheelsScenariosTest - Test completed. Navigating back to Home.
+2026-02-04 18:18:48 INFO  ExcelUtils - Wrote sheet 'CarComparison' with 22 rows into artifacts\zigwheels_automation_chrome_20260204_181711.xlsx
+2026-02-04 18:18:50 INFO  ZigWheelsScenariosTest - Test completed. Navigating back to Home.
+2026-02-04 18:19:00 INFO  ZigWheelsScenariosTest - Browser session ended.

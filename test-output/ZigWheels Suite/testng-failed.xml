@@ -12,7 +12,7 @@
           <include name="resetPage"/>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="scenario7_searchAndCompareCars"/>
+          <include name="scenario4_electricScootersOLA"/>
         </methods>
       </class> <!-- com.zigwheels.tests.ZigWheelsScenariosTest -->
     </classes>

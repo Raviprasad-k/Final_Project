@@ -35,7 +35,7 @@ public class ZigWheelsScenariosTest extends BaseTest {
         home.openPopularCars();
         captureStep("S1_01_PopularCars_Page");
 
-        PopularCarsPage page = new PopularCarsPage(driver);
+        PopularCarsPage page = new PopularCarsPage(driver,wait);
         List<List<String>> rows = page.scrapeNamesAndPrices();
         excel.writeSheet("PopularCars", List.of("#", "Car Name", "Price"), rows);
 
@@ -60,7 +60,7 @@ public class ZigWheelsScenariosTest extends BaseTest {
         HomePage home = new HomePage(driver);
         home.openElectricScooters();
 
-        ElectricScootersPage page = new ElectricScootersPage(driver);
+        ElectricScootersPage page = new ElectricScootersPage(driver,wait);
         page.filterOLA();
 
         List<List<String>> rows = page.scrapeModels();
