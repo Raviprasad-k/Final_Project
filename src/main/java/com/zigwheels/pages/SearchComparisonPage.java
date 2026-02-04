@@ -54,14 +54,36 @@ public class SearchComparisonPage {
             }
         } catch (Exception ignored) {}
 
+        // Scroll into view
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);", hover);
-         
-        comparisonLink.click();
+        
+        // 1. Wait until the link is present in the DOM
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.linkText("GLS vs XC90")));
+
+        // 2. Use JavaScript to click (This avoids "ElementClickInterceptedException")
+        js.executeScript("arguments[0].click();", comparisonLink);
    
+        // 3. Continue with the rest of your code
         Actions actions = new Actions(driver);
         actions.scrollToElement(engineLink).perform();
     }
+//    public void navigateToComparison() throws InterruptedException {
+//        try {
+//            if (allCarsLink.isDisplayed()) {
+//                allCarsLink.click();
+//            }
+//        } catch (Exception ignored) {}
+//
+//        JavascriptExecutor js = (JavascriptExecutor) driver;
+//        js.executeScript("arguments[0].scrollIntoView(true);", hover);
+//         
+//        wait.until(ExpectedConditions.elementToBeClickable(comparisonLink));
+//        comparisonLink.click();
+//   
+//        Actions actions = new Actions(driver);
+//        actions.scrollToElement(engineLink).perform();
+//    }
 
     public List<List<String>> scrapeComparisonTable() {
         List<List<String>> data = new ArrayList<>();

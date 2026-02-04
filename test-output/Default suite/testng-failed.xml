@@ -5,10 +5,10 @@
     <classes>
       <class name="com.zigwheels.tests.ZigWheelsScenariosTest">
         <methods>
-          <include name="scenario1_writeAllLinksAndValidate"/>
           <include name="resetPage"/>
           <include name="setUp"/>
           <include name="tearDown"/>
+          <include name="scenario7_searchAndCompareCars"/>
         </methods>
       </class> <!-- com.zigwheels.tests.ZigWheelsScenariosTest -->
     </classes>
