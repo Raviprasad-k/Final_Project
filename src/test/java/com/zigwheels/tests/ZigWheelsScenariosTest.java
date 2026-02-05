@@ -1,115 +1,94 @@
+
 package com.zigwheels.tests;
 
-import java.util.ArrayList;
 import java.util.List;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
 import com.zigwheels.base.BaseTest;
 import com.zigwheels.pages.ElectricScootersPage;
 import com.zigwheels.pages.HomePage;
 import com.zigwheels.pages.PopularCarsPage;
 import com.zigwheels.pages.ProfilePage;
 import com.zigwheels.pages.SearchComparisonPage;
-import com.zigwheels.pages.UpcomingBikesPage;
 import com.zigwheels.pages.UsedCarsPage;
 
 public class ZigWheelsScenariosTest extends BaseTest {
+	
+	@Test(priority = 7)
+	public void scenario1_searchAndCompareCars() throws InterruptedException {
+		SearchComparisonPage comparePage = new SearchComparisonPage(driver, wait);
+		comparePage.searchCar("mercedes-benz");
+		comparePage.navigateToComparison();
+		captureStep("S1_Comparison_Page");
 
-    @Test(priority = 1, enabled = false)
-    public void scenario1_writeAllLinksAndValidate() {
-        HomePage home = new HomePage(driver);
-        List<HomePage.LinkData> links = home.collectMeaningfulLinksAndValidate();
+		List<List<String>> rows = comparePage.scrapeComparisonTable();
+		excel.writeSheet("CarComparison", null, rows);
 
-        List<String> headers = List.of("Text", "URL", "Status", "HTTP Code");
-        List<List<String>> rows = new ArrayList<>();
-        for (HomePage.LinkData ld : links) {
-            rows.add(List.of(ld.text, ld.href, ld.status, ld.code));
-        }
-        excel.writeSheet("HomeLinks", headers, rows);
-        captureStep("01_Links_Validated");
-    }
+		Assert.assertTrue(rows.size() > 0, "Comparison table is empty");
+	}
 
-    @Test(priority = 2)
-    public void scenario2_popularCars() {
-        HomePage home = new HomePage(driver);
-        home.openPopularCars();
-        captureStep("S1_01_PopularCars_Page");
+	@Test(priority = 2)
+	public void scenario2_popularCars() {
+		HomePage home = new HomePage(driver);
+		home.openPopularCars();
+		captureStep("S2_PopularCars_Page");
 
-        PopularCarsPage page = new PopularCarsPage(driver,wait);
-        List<List<String>> rows = page.scrapeNamesAndPrices();
-        excel.writeSheet("PopularCars", List.of("#", "Car Name", "Price"), rows);
+		PopularCarsPage page = new PopularCarsPage(driver);
+		List<List<String>> rows = page.scrapeNamesAndPrices();
+		excel.writeSheet("PopularCars", List.of("#", "Car Name", "Price"), rows);
 
-        // This ensures the report shows "FAILED" if size is 0
-        Assert.assertTrue(rows.size() > 0, "No popular cars were found on the page!");
-    }
+		// This ensures the report shows "FAILED" if size is 0
+		Assert.assertTrue(rows.size() > 0, "No popular cars were found on the page!");
+	}
 
-    @Test(priority = 3, enabled = false)
-    public void scenario3_upcomingBikes() {
-        HomePage home = new HomePage(driver);
-        home.openUpcomingBikes();
-        
-        UpcomingBikesPage page = new UpcomingBikesPage(driver);
-        List<List<String>> rows = page.scrapeUpcomingBikes();
-        excel.writeSheet("UpcomingBikes", List.of("#", "Bike Name", "Price", "Launch"), rows);
+	@Test(priority = 4)
+	public void scenario3_electricScootersOLA() throws InterruptedException {
+		HomePage home = new HomePage(driver);
+		home.openElectricScooters();
 
-        Assert.assertTrue(rows.size() > 0, "Upcoming bikes list is empty");
-    }
+		ElectricScootersPage page = new ElectricScootersPage(driver, wait);
+		page.filterOLA();
+		captureStep("S3_Ola_Electric_Scooters");
 
-    @Test(priority = 4)
-    public void scenario4_electricScootersOLA() throws InterruptedException {
-        HomePage home = new HomePage(driver);
-        home.openElectricScooters();
+		List<List<String>> rows = page.scrapeModels();
+		excel.writeSheet("ElectricScooters_OLA", List.of("#", "Model", "Price"), rows);
 
-        ElectricScootersPage page = new ElectricScootersPage(driver,wait);
-        page.filterOLA();
+		Assert.assertTrue(rows.size() > 0, "OLA Filter returned no results");
+	}
 
-        List<List<String>> rows = page.scrapeModels();
-        excel.writeSheet("ElectricScooters_OLA", List.of("#", "Model", "Price"), rows);
+	@Test(priority = 5)
+	public void scenario4_usedCarsChennaiSortAndValidate() {
+		HomePage home = new HomePage(driver);
+		home.openUsedCars();
 
-        Assert.assertTrue(rows.size() > 0, "OLA Filter returned no results");
-    }
+		UsedCarsPage page = new UsedCarsPage(driver, wait);
+		page.selectCityChennaiIfModal();
+		page.sortByPriceHighToLow();
+		captureStep("S4_Used cars_Page");
+		List<List<String>> rows = page.scrapeUsedCars();
+		excel.writeSheet("UsedCars_Chennai", List.of("#", "Car Name", "Price", "Fuel Type"), rows);
 
-    @Test(priority = 5)
-    public void scenario5_usedCarsChennaiSortAndValidate() {
-        HomePage home = new HomePage(driver);
-        home.openUsedCars();
+		String errorMsg = page.attemptViewSellerAndGetError("987898");
+		Assert.assertNotNull(errorMsg, "Error message for invalid login was not captured");
+	}
 
-        UsedCarsPage page = new UsedCarsPage(driver, wait);
-        page.selectCityChennaiIfModal();
-        page.sortByPriceHighToLow();
+	@Test(priority = 6)
+	public void scenario5_profileGoogleInvalidLogin() {
+		HomePage home = new HomePage(driver);
+		home.openProfile();
 
-        List<List<String>> rows = page.scrapeUsedCars();
-        excel.writeSheet("UsedCars_Chennai", List.of("#", "Car Name", "Price", "Fuel"), rows);
+		ProfilePage profile = new ProfilePage(driver);
+		String msg = profile.tryGoogleLoginInvalid();
+		captureStep("S5_Error Msg");
+		excel.writeSheet("GoogleLogin_Error", List.of("Error Message"), List.of(List.of(msg)));
 
-        String errorMsg = page.attemptViewSellerAndGetError("987898");
-        Assert.assertNotNull(errorMsg, "Error message for invalid login was not captured");
-    }
+		Assert.assertTrue(msg.length() > 0, "Google login error message is missing");
+	}
 
-    @Test(priority = 6)
-    public void scenario6_profileGoogleInvalidLogin() {
-        HomePage home = new HomePage(driver);
-        home.openProfile();
-
-        ProfilePage profile = new ProfilePage(driver);
-        String msg = profile.tryGoogleLoginInvalid();
-        
-        Assert.assertTrue(msg.length() > 0, "Google login error message is missing");
-    }
-
-    @Test(priority = 7)
-    public void scenario7_searchAndCompareCars() throws InterruptedException {
-        SearchComparisonPage comparePage = new SearchComparisonPage(driver, wait);
-        comparePage.searchCar("mercedes-benz");
-        comparePage.navigateToComparison();
-
-        List<List<String>> rows = comparePage.scrapeComparisonTable();
-        excel.writeSheet("CarComparison", null, rows);
-
-        Assert.assertTrue(rows.size() > 0, "Comparison table is empty");
-    }
+	
 }
-
-
 
 //--------------VERSION 2
 //package com.zigwheels.tests;
@@ -304,8 +283,6 @@ public class ZigWheelsScenariosTest extends BaseTest {
 //        captureStep("S6_03_Back_Home");
 //    }
 //}
-
-
 
 //------------------version 1 
 

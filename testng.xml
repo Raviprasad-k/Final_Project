@@ -1,6 +1,6 @@
 
 
-<suite name="ZigWheels Suite" verbose="1" parallel="tests" thread-count="2">
+<suite name="ZigWheels Suite" verbose="1" parallel="tests" thread-count="5">
     <listeners>
         <listener class-name="com.zigwheels.utils.TestListener"/>
     </listeners>
@@ -13,10 +13,10 @@
         </test> 
 
 
-    <!-- <test name="Edge Tests">
+     <test name="Edge Tests">
         <parameter name="browser" value="edge"/>
         <classes>
             <class name="com.zigwheels.tests.ZigWheelsScenariosTest"/>
         </classes>
-    </test> -->
+    </test> 
 </suite>

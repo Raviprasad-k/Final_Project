@@ -1,13 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="7" passed="5" failed="0" skipped="0">
+<testng-results ignored="0" total="10" passed="10" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-04T18:17:16 IST" name="ZigWheels Suite" finished-at="2026-02-04T18:19:00 IST" duration-ms="103712">
+  <suite started-at="2026-02-05T14:25:55 IST" name="ZigWheels Suite" finished-at="2026-02-05T14:27:02 IST" duration-ms="67430">
     <groups>
     </groups>
-    <test started-at="2026-02-04T18:17:16 IST" name="Chrome Tests" finished-at="2026-02-04T18:19:00 IST" duration-ms="103712">
+    <test started-at="2026-02-05T14:25:55 IST" name="Edge Tests" finished-at="2026-02-05T14:26:53 IST" duration-ms="58538">
       <class name="com.zigwheels.tests.ZigWheelsScenariosTest">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:com.zigwheels.tests.ZigWheelsScenariosTest@314b9e4b]" started-at="2026-02-04T18:17:20 IST" name="setUp" finished-at="2026-02-04T18:17:45 IST" duration-ms="25742" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:com.zigwheels.tests.ZigWheelsScenariosTest@7d17ee50]" started-at="2026-02-05T14:25:55 IST" name="setUp" finished-at="2026-02-05T14:26:06 IST" duration-ms="10672" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="scenario2_popularCars()[pri:2, instance:com.zigwheels.tests.ZigWheelsScenariosTest@7d17ee50]" started-at="2026-02-05T14:26:06 IST" name="scenario2_popularCars" finished-at="2026-02-05T14:26:12 IST" duration-ms="5878" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenario2_popularCars -->
+        <test-method is-config="true" signature="resetPage()[pri:0, instance:com.zigwheels.tests.ZigWheelsScenariosTest@7d17ee50]" started-at="2026-02-05T14:26:12 IST" name="resetPage" finished-at="2026-02-05T14:26:13 IST" duration-ms="944" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resetPage -->
+        <test-method signature="scenario3_electricScootersOLA()[pri:4, instance:com.zigwheels.tests.ZigWheelsScenariosTest@7d17ee50]" started-at="2026-02-05T14:26:13 IST" name="scenario3_electricScootersOLA" finished-at="2026-02-05T14:26:18 IST" duration-ms="4751" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenario3_electricScootersOLA -->
+        <test-method is-config="true" signature="resetPage()[pri:0, instance:com.zigwheels.tests.ZigWheelsScenariosTest@7d17ee50]" started-at="2026-02-05T14:26:18 IST" name="resetPage" finished-at="2026-02-05T14:26:20 IST" duration-ms="2186" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resetPage -->
+        <test-method signature="scenario4_usedCarsChennaiSortAndValidate()[pri:5, instance:com.zigwheels.tests.ZigWheelsScenariosTest@7d17ee50]" started-at="2026-02-05T14:26:20 IST" name="scenario4_usedCarsChennaiSortAndValidate" finished-at="2026-02-05T14:26:32 IST" duration-ms="11750" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenario4_usedCarsChennaiSortAndValidate -->
+        <test-method is-config="true" signature="resetPage()[pri:0, instance:com.zigwheels.tests.ZigWheelsScenariosTest@7d17ee50]" started-at="2026-02-05T14:26:32 IST" name="resetPage" finished-at="2026-02-05T14:26:33 IST" duration-ms="852" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resetPage -->
+        <test-method signature="scenario5_profileGoogleInvalidLogin()[pri:6, instance:com.zigwheels.tests.ZigWheelsScenariosTest@7d17ee50]" started-at="2026-02-05T14:26:33 IST" name="scenario5_profileGoogleInvalidLogin" finished-at="2026-02-05T14:26:37 IST" duration-ms="4478" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenario5_profileGoogleInvalidLogin -->
+        <test-method is-config="true" signature="resetPage()[pri:0, instance:com.zigwheels.tests.ZigWheelsScenariosTest@7d17ee50]" started-at="2026-02-05T14:26:38 IST" name="resetPage" finished-at="2026-02-05T14:26:39 IST" duration-ms="958" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resetPage -->
+        <test-method signature="scenario1_searchAndCompareCars()[pri:7, instance:com.zigwheels.tests.ZigWheelsScenariosTest@7d17ee50]" started-at="2026-02-05T14:26:39 IST" name="scenario1_searchAndCompareCars" finished-at="2026-02-05T14:26:45 IST" duration-ms="6463" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenario1_searchAndCompareCars -->
+        <test-method is-config="true" signature="resetPage()[pri:0, instance:com.zigwheels.tests.ZigWheelsScenariosTest@7d17ee50]" started-at="2026-02-05T14:26:45 IST" name="resetPage" finished-at="2026-02-05T14:26:47 IST" duration-ms="1076" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resetPage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.zigwheels.tests.ZigWheelsScenariosTest@7d17ee50]" started-at="2026-02-05T14:26:47 IST" name="tearDown" finished-at="2026-02-05T14:26:53 IST" duration-ms="6583" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.zigwheels.tests.ZigWheelsScenariosTest -->
+    </test> <!-- Edge Tests -->
+    <test started-at="2026-02-05T14:25:55 IST" name="Chrome Tests" finished-at="2026-02-05T14:27:02 IST" duration-ms="67430">
+      <class name="com.zigwheels.tests.ZigWheelsScenariosTest">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:com.zigwheels.tests.ZigWheelsScenariosTest@f425231]" started-at="2026-02-05T14:25:55 IST" name="setUp" finished-at="2026-02-05T14:26:03 IST" duration-ms="7474" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,47 +77,47 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="scenario2_popularCars()[pri:2, instance:com.zigwheels.tests.ZigWheelsScenariosTest@314b9e4b]" started-at="2026-02-04T18:17:45 IST" name="scenario2_popularCars" finished-at="2026-02-04T18:18:00 IST" duration-ms="14233" status="PASS">
+        <test-method signature="scenario2_popularCars()[pri:2, instance:com.zigwheels.tests.ZigWheelsScenariosTest@f425231]" started-at="2026-02-05T14:26:03 IST" name="scenario2_popularCars" finished-at="2026-02-05T14:26:09 IST" duration-ms="6672" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- scenario2_popularCars -->
-        <test-method is-config="true" signature="resetPage()[pri:0, instance:com.zigwheels.tests.ZigWheelsScenariosTest@314b9e4b]" started-at="2026-02-04T18:18:00 IST" name="resetPage" finished-at="2026-02-04T18:18:04 IST" duration-ms="3566" status="PASS">
+        <test-method is-config="true" signature="resetPage()[pri:0, instance:com.zigwheels.tests.ZigWheelsScenariosTest@f425231]" started-at="2026-02-05T14:26:10 IST" name="resetPage" finished-at="2026-02-05T14:26:11 IST" duration-ms="1491" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- resetPage -->
-        <test-method signature="scenario4_electricScootersOLA()[pri:4, instance:com.zigwheels.tests.ZigWheelsScenariosTest@314b9e4b]" started-at="2026-02-04T18:18:04 IST" name="scenario4_electricScootersOLA" finished-at="2026-02-04T18:18:12 IST" duration-ms="7992" status="PASS">
+        <test-method signature="scenario3_electricScootersOLA()[pri:4, instance:com.zigwheels.tests.ZigWheelsScenariosTest@f425231]" started-at="2026-02-05T14:26:11 IST" name="scenario3_electricScootersOLA" finished-at="2026-02-05T14:26:18 IST" duration-ms="6580" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- scenario4_electricScootersOLA -->
-        <test-method is-config="true" signature="resetPage()[pri:0, instance:com.zigwheels.tests.ZigWheelsScenariosTest@314b9e4b]" started-at="2026-02-04T18:18:12 IST" name="resetPage" finished-at="2026-02-04T18:18:14 IST" duration-ms="2129" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- resetPage -->
-        <test-method signature="scenario5_usedCarsChennaiSortAndValidate()[pri:5, instance:com.zigwheels.tests.ZigWheelsScenariosTest@314b9e4b]" started-at="2026-02-04T18:18:14 IST" name="scenario5_usedCarsChennaiSortAndValidate" finished-at="2026-02-04T18:18:24 IST" duration-ms="9871" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- scenario5_usedCarsChennaiSortAndValidate -->
-        <test-method is-config="true" signature="resetPage()[pri:0, instance:com.zigwheels.tests.ZigWheelsScenariosTest@314b9e4b]" started-at="2026-02-04T18:18:25 IST" name="resetPage" finished-at="2026-02-04T18:18:27 IST" duration-ms="2069" status="PASS">
+        </test-method> <!-- scenario3_electricScootersOLA -->
+        <test-method is-config="true" signature="resetPage()[pri:0, instance:com.zigwheels.tests.ZigWheelsScenariosTest@f425231]" started-at="2026-02-05T14:26:18 IST" name="resetPage" finished-at="2026-02-05T14:26:19 IST" duration-ms="1242" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- resetPage -->
-        <test-method signature="scenario6_profileGoogleInvalidLogin()[pri:6, instance:com.zigwheels.tests.ZigWheelsScenariosTest@314b9e4b]" started-at="2026-02-04T18:18:27 IST" name="scenario6_profileGoogleInvalidLogin" finished-at="2026-02-04T18:18:34 IST" duration-ms="7638" status="PASS">
+        <test-method signature="scenario4_usedCarsChennaiSortAndValidate()[pri:5, instance:com.zigwheels.tests.ZigWheelsScenariosTest@f425231]" started-at="2026-02-05T14:26:19 IST" name="scenario4_usedCarsChennaiSortAndValidate" finished-at="2026-02-05T14:26:30 IST" duration-ms="10430" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- scenario6_profileGoogleInvalidLogin -->
-        <test-method is-config="true" signature="resetPage()[pri:0, instance:com.zigwheels.tests.ZigWheelsScenariosTest@314b9e4b]" started-at="2026-02-04T18:18:35 IST" name="resetPage" finished-at="2026-02-04T18:18:38 IST" duration-ms="2574" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- resetPage -->
-        <test-method signature="scenario7_searchAndCompareCars()[pri:7, instance:com.zigwheels.tests.ZigWheelsScenariosTest@314b9e4b]" started-at="2026-02-04T18:18:38 IST" name="scenario7_searchAndCompareCars" finished-at="2026-02-04T18:18:48 IST" duration-ms="10372" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- scenario7_searchAndCompareCars -->
-        <test-method is-config="true" signature="resetPage()[pri:0, instance:com.zigwheels.tests.ZigWheelsScenariosTest@314b9e4b]" started-at="2026-02-04T18:18:48 IST" name="resetPage" finished-at="2026-02-04T18:18:50 IST" duration-ms="2166" status="PASS">
+        </test-method> <!-- scenario4_usedCarsChennaiSortAndValidate -->
+        <test-method is-config="true" signature="resetPage()[pri:0, instance:com.zigwheels.tests.ZigWheelsScenariosTest@f425231]" started-at="2026-02-05T14:26:30 IST" name="resetPage" finished-at="2026-02-05T14:26:32 IST" duration-ms="2468" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- resetPage -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.zigwheels.tests.ZigWheelsScenariosTest@314b9e4b]" started-at="2026-02-04T18:18:50 IST" name="tearDown" finished-at="2026-02-04T18:19:00 IST" duration-ms="9319" status="PASS">
+        <test-method signature="scenario5_profileGoogleInvalidLogin()[pri:6, instance:com.zigwheels.tests.ZigWheelsScenariosTest@f425231]" started-at="2026-02-05T14:26:32 IST" name="scenario5_profileGoogleInvalidLogin" finished-at="2026-02-05T14:26:40 IST" duration-ms="7200" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenario5_profileGoogleInvalidLogin -->
+        <test-method is-config="true" signature="resetPage()[pri:0, instance:com.zigwheels.tests.ZigWheelsScenariosTest@f425231]" started-at="2026-02-05T14:26:40 IST" name="resetPage" finished-at="2026-02-05T14:26:42 IST" duration-ms="2306" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resetPage -->
+        <test-method signature="scenario1_searchAndCompareCars()[pri:7, instance:com.zigwheels.tests.ZigWheelsScenariosTest@f425231]" started-at="2026-02-05T14:26:42 IST" name="scenario1_searchAndCompareCars" finished-at="2026-02-05T14:26:50 IST" duration-ms="7412" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenario1_searchAndCompareCars -->
+        <test-method is-config="true" signature="resetPage()[pri:0, instance:com.zigwheels.tests.ZigWheelsScenariosTest@f425231]" started-at="2026-02-05T14:26:53 IST" name="resetPage" finished-at="2026-02-05T14:26:54 IST" duration-ms="1115" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resetPage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.zigwheels.tests.ZigWheelsScenariosTest@f425231]" started-at="2026-02-05T14:26:54 IST" name="tearDown" finished-at="2026-02-05T14:27:02 IST" duration-ms="7596" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

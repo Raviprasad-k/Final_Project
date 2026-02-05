@@ -7,7 +7,7 @@
 
     <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
     <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
-    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type='text/javascript'>
@@ -21,11 +21,12 @@
      -->
   </head>
 
-  <body>    <div class="top-banner-root">
+  <body>
+    <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -92,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">10 methods, 2 failed,   8 passed</span>
+                    <span class="method-stats">10 methods, 1 failed,   9 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -103,12 +104,7 @@
                     <div class="method-list-content failed suite-ZigWheels_Suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-ZigWheels_Suite" title="com.zigwheels.tests.ZigWheelsScenariosTest" class="method navigator-link" hash-for-method="scenario7_searchAndCompareCars">scenario7_searchAndCompareCars</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-ZigWheels_Suite" title="com.zigwheels.tests.ZigWheelsScenariosTest" class="method navigator-link" hash-for-method="scenario7_searchAndCompareCars">scenario7_searchAndCompareCars</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-ZigWheels_Suite" title="com.zigwheels.tests.ZigWheelsScenariosTest" class="method navigator-link" hash-for-method="scenario2_popularCars">scenario2_popularCars</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-ZigWheels_Suite -->
@@ -127,11 +123,6 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-ZigWheels_Suite" title="com.zigwheels.tests.ZigWheelsScenariosTest" class="method navigator-link" hash-for-method="scenario2_popularCars">scenario2_popularCars</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-ZigWheels_Suite" title="com.zigwheels.tests.ZigWheelsScenariosTest" class="method navigator-link" hash-for-method="scenario4_electricScootersOLA">scenario4_electricScootersOLA</a> <!-- method navigator-link -->
                       </span>
                       <br/>
@@ -158,6 +149,16 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-ZigWheels_Suite" title="com.zigwheels.tests.ZigWheelsScenariosTest" class="method navigator-link" hash-for-method="scenario6_profileGoogleInvalidLogin">scenario6_profileGoogleInvalidLogin</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ZigWheels_Suite" title="com.zigwheels.tests.ZigWheelsScenariosTest" class="method navigator-link" hash-for-method="scenario7_searchAndCompareCars">scenario7_searchAndCompareCars</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-ZigWheels_Suite" title="com.zigwheels.tests.ZigWheelsScenariosTest" class="method navigator-link" hash-for-method="scenario7_searchAndCompareCars">scenario7_searchAndCompareCars</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-ZigWheels_Suite -->
@@ -180,73 +181,17 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="scenario7_searchAndCompareCars">
-                  </a> <!-- scenario7_searchAndCompareCars -->
-                  <span class="method-name">scenario7_searchAndCompareCars</span>
-                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element is not clickable at point (154, 1835)
-  (Session info: MicrosoftEdge=144.0.3719.104)
-Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21&apos;
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [e2017121f410b1698fd839ae10270606, clickElement {id=f.69F57A8C1422E363B39E96C152981F0A.d.D587D67381285AB8C9D736402D500463.e.931}]
-Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 144.0.3719.104, fedcm:accounts: true, goog:processID: 31752, ms:edgeOptions: {debuggerAddress: localhost:65319}, msedge: {msedgedriverVersion: 144.0.3719.104 (7d1be999663..., userDataDir: C:\Users\2457255\AppData\Lo...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65319/devtoo..., se:cdpVersion: 144.0.3719.104, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[EdgeDriver: MicrosoftEdge on windows (e2017121f410b1698fd839ae10270606)] -&gt; link text: GLS vs XC90]
-Session ID: e2017121f410b1698fd839ae10270606
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy32.click(Unknown Source)
-	at com.zigwheels.pages.SearchComparisonPage.navigateToComparison(SearchComparisonPage.java:60)
-	at com.zigwheels.tests.ZigWheelsScenariosTest.scenario7_searchAndCompareCars(ZigWheelsScenariosTest.java:103)
+                  <a name="scenario2_popularCars">
+                  </a> <!-- scenario2_popularCars -->
+                  <span class="method-name">scenario2_popularCars</span>
+                  <div class="stack-trace">java.lang.AssertionError: No popular cars were found on the page! expected [true] but found [false]
+	at com.zigwheels.tests.ZigWheelsScenariosTest.scenario2_popularCars(ZigWheelsScenariosTest.java:43)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-... Removed 17 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="scenario7_searchAndCompareCars">
-                  </a> <!-- scenario7_searchAndCompareCars -->
-                  <span class="method-name">scenario7_searchAndCompareCars</span>
-                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element is not clickable at point (158, 2205)
-  (Session info: chrome=142.0.7444.176)
-Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a8e66412409c3e004bee76d8b14fe8ba, clickElement {id=f.7E35FC2EDE00B57FE9A34F092944830E.d.0283688C06E91050D29098F5638775B2.e.948}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\2457255\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62525}, goog:processID: 18952, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62525/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (a8e66412409c3e004bee76d8b14fe8ba)] -&gt; link text: GLS vs XC90]
-Session ID: a8e66412409c3e004bee76d8b14fe8ba
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy32.click(Unknown Source)
-	at com.zigwheels.pages.SearchComparisonPage.navigateToComparison(SearchComparisonPage.java:60)
-	at com.zigwheels.tests.ZigWheelsScenariosTest.scenario7_searchAndCompareCars(ZigWheelsScenariosTest.java:103)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-... Removed 17 stack frames
+... Removed 19 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -267,13 +212,6 @@ Session ID: a8e66412409c3e004bee76d8b14fe8ba
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="scenario2_popularCars">
-                  </a> <!-- scenario2_popularCars -->
-                  <span class="method-name">scenario2_popularCars</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
                   <a name="scenario4_electricScootersOLA">
                   </a> <!-- scenario4_electricScootersOLA -->
                   <span class="method-name">scenario4_electricScootersOLA</span>
@@ -312,6 +250,20 @@ Session ID: a8e66412409c3e004bee76d8b14fe8ba
                   <a name="scenario6_profileGoogleInvalidLogin">
                   </a> <!-- scenario6_profileGoogleInvalidLogin -->
                   <span class="method-name">scenario6_profileGoogleInvalidLogin</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="scenario7_searchAndCompareCars">
+                  </a> <!-- scenario7_searchAndCompareCars -->
+                  <span class="method-name">scenario7_searchAndCompareCars</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="scenario7_searchAndCompareCars">
+                  </a> <!-- scenario7_searchAndCompareCars -->
+                  <span class="method-name">scenario7_searchAndCompareCars</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -383,45 +335,45 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(10);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'scenario4_electricScootersOLA')
+data.setCell(0, 1, 'scenario2_popularCars')
 data.setCell(0, 2, 'com.zigwheels.tests.ZigWheelsScenariosTest')
-data.setCell(0, 3, 42426);
+data.setCell(0, 3, 50285);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'scenario5_usedCarsChennaiSortAndValidate')
 data.setCell(1, 2, 'com.zigwheels.tests.ZigWheelsScenariosTest')
-data.setCell(1, 3, 26371);
+data.setCell(1, 3, 23870);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'scenario5_usedCarsChennaiSortAndValidate')
+data.setCell(2, 1, 'scenario2_popularCars')
 data.setCell(2, 2, 'com.zigwheels.tests.ZigWheelsScenariosTest')
-data.setCell(2, 3, 20563);
+data.setCell(2, 3, 15460);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'scenario2_popularCars')
+data.setCell(3, 1, 'scenario5_usedCarsChennaiSortAndValidate')
 data.setCell(3, 2, 'com.zigwheels.tests.ZigWheelsScenariosTest')
-data.setCell(3, 3, 17560);
+data.setCell(3, 3, 13169);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'scenario2_popularCars')
+data.setCell(4, 1, 'scenario7_searchAndCompareCars')
 data.setCell(4, 2, 'com.zigwheels.tests.ZigWheelsScenariosTest')
-data.setCell(4, 3, 17170);
+data.setCell(4, 3, 10926);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'scenario4_electricScootersOLA')
+data.setCell(5, 1, 'scenario7_searchAndCompareCars')
 data.setCell(5, 2, 'com.zigwheels.tests.ZigWheelsScenariosTest')
-data.setCell(5, 3, 12740);
+data.setCell(5, 3, 9385);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'scenario6_profileGoogleInvalidLogin')
+data.setCell(6, 1, 'scenario4_electricScootersOLA')
 data.setCell(6, 2, 'com.zigwheels.tests.ZigWheelsScenariosTest')
-data.setCell(6, 3, 10898);
+data.setCell(6, 3, 9187);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'scenario6_profileGoogleInvalidLogin')
+data.setCell(7, 1, 'scenario4_electricScootersOLA')
 data.setCell(7, 2, 'com.zigwheels.tests.ZigWheelsScenariosTest')
-data.setCell(7, 3, 7764);
+data.setCell(7, 3, 8137);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'scenario7_searchAndCompareCars')
+data.setCell(8, 1, 'scenario6_profileGoogleInvalidLogin')
 data.setCell(8, 2, 'com.zigwheels.tests.ZigWheelsScenariosTest')
-data.setCell(8, 3, 6787);
+data.setCell(8, 3, 7266);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'scenario7_searchAndCompareCars')
+data.setCell(9, 1, 'scenario6_profileGoogleInvalidLogin')
 data.setCell(9, 2, 'com.zigwheels.tests.ZigWheelsScenariosTest')
-data.setCell(9, 3, 4319);
+data.setCell(9, 3, 6122);
 window.suiteTableData['ZigWheels_Suite']= { tableData: data, tableDiv: 'times-div-ZigWheels_Suite'}
 return data;
 }
@@ -447,13 +399,13 @@ return data;
             <div class="ignored-class-div">
               <span class="ignored-class-name">com.zigwheels.tests.ZigWheelsScenariosTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">scenario3_upcomingBikes</span>
-                <br/>
-                <span class="ignored-method-name">scenario3_upcomingBikes</span>
-                <br/>
                 <span class="ignored-method-name">scenario1_writeAllLinksAndValidate</span>
                 <br/>
                 <span class="ignored-method-name">scenario1_writeAllLinksAndValidate</span>
+                <br/>
+                <span class="ignored-method-name">scenario3_upcomingBikes</span>
+                <br/>
+                <span class="ignored-method-name">scenario3_upcomingBikes</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -476,95 +428,93 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">scenario2_popularCars</span>
-                <span class="method-start">34385 ms</span>
+                <span class="method-start">21461 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">scenario2_popularCars</span>
-                <span class="method-start">44001 ms</span>
+                <span class="method-start">24748 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">resetPage</span>
-                <span class="method-start">52731 ms</span>
+                <span class="method-start">37342 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">scenario4_electricScootersOLA</span>
-                <span class="method-start">55371 ms</span>
+                <span class="method-start">39114 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">resetPage</span>
-                <span class="method-start">61905 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="test-method">
-                <span class="method-name">scenario4_electricScootersOLA</span>
-                <span class="method-start">66283 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">resetPage</span>
-                <span class="method-start">79659 ms</span>
+                <span class="method-start">48674 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">scenario5_usedCarsChennaiSortAndValidate</span>
-                <span class="method-start">82941 ms</span>
+                <span class="method-start">50195 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">resetPage</span>
-                <span class="method-start">98303 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="test-method">
-                <span class="method-name">scenario5_usedCarsChennaiSortAndValidate</span>
-                <span class="method-start">100823 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">resetPage</span>
-                <span class="method-start">109657 ms</span>
+                <span class="method-start">63790 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">scenario6_profileGoogleInvalidLogin</span>
-                <span class="method-start">111027 ms</span>
+                <span class="method-start">65041 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">resetPage</span>
-                <span class="method-start">119514 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method after">
-                <span class="method-name">resetPage</span>
-                <span class="method-start">121812 ms</span>
+                <span class="method-start">71896 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">scenario7_searchAndCompareCars</span>
-                <span class="method-start">122466 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">scenario6_profileGoogleInvalidLogin</span>
-                <span class="method-start">123545 ms</span>
+                <span class="method-start">73564 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">resetPage</span>
-                <span class="method-start">130905 ms</span>
+                <span class="method-start">75444 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">scenario4_electricScootersOLA</span>
+                <span class="method-start">75553 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">resetPage</span>
+                <span class="method-start">84071 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">resetPage</span>
+                <span class="method-start">84790 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">133436 ms</span>
+                <span class="method-start">86179 ms</span>
               </div> <!-- configuration-class after -->
-              <div class="configuration-method after">
-                <span class="method-name">resetPage</span>
-                <span class="method-start">154221 ms</span>
-              </div> <!-- configuration-method after -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">scenario7_searchAndCompareCars</span>
-                <span class="method-start">156119 ms</span>
+                <span class="method-name">scenario5_usedCarsChennaiSortAndValidate</span>
+                <span class="method-start">86847 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">resetPage</span>
-                <span class="method-start">161408 ms</span>
+                <span class="method-start">111193 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">scenario6_profileGoogleInvalidLogin</span>
+                <span class="method-start">112946 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">resetPage</span>
+                <span class="method-start">120865 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">scenario7_searchAndCompareCars</span>
+                <span class="method-start">123668 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">resetPage</span>
+                <span class="method-start">133331 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">163248 ms</span>
+                <span class="method-start">135557 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

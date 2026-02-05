@@ -4,28 +4,15 @@
   <listeners>
     <listener class-name="com.zigwheels.utils.TestListener"/>
   </listeners>
-  <test thread-count="2" parallel="tests" name="Edge Tests(failed)" verbose="0">
-    <parameter name="browser" value="edge"/>
-    <classes>
-      <class name="com.zigwheels.tests.ZigWheelsScenariosTest">
-        <methods>
-          <include name="resetPage"/>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="scenario7_searchAndCompareCars"/>
-        </methods>
-      </class> <!-- com.zigwheels.tests.ZigWheelsScenariosTest -->
-    </classes>
-  </test> <!-- Edge Tests(failed) -->
   <test thread-count="2" parallel="tests" name="Chrome Tests(failed)" verbose="0">
     <parameter name="browser" value="chrome"/>
     <classes>
       <class name="com.zigwheels.tests.ZigWheelsScenariosTest">
         <methods>
+          <include name="scenario2_popularCars"/>
           <include name="resetPage"/>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="scenario7_searchAndCompareCars"/>
         </methods>
       </class> <!-- com.zigwheels.tests.ZigWheelsScenariosTest -->
     </classes>

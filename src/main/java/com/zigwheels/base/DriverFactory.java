@@ -5,69 +5,49 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class DriverFactory {
-    private static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
+	private static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
 
-    public static synchronized void initDriver(String browser, boolean headless) {
-        WebDriver driver;
-        String browserType = browser.toLowerCase();
+	public static synchronized void initDriver(String browser, boolean headless) {
+		WebDriver driver;
+		String browserType = browser.toLowerCase();
 
-        switch (browserType) {
-		        case "chrome":
-		            ChromeOptions co = new ChromeOptions();
-		            // Add window-size here!
-		            co.addArguments("--disable-notifications", "--window-size=1920,1080", "--start-maximized");
-		            if (headless) co.addArguments("--headless=new");
-		            driver = new ChromeDriver(co);
-		            break;
-		
-		        case "edge":
-		            EdgeOptions eo = new EdgeOptions();
-		            // Add window-size here!
-		            eo.addArguments("--disable-notifications", "--window-size=1920,1080", "--start-maximized");
-		            if (headless) eo.addArguments("--headless=new");
-		            driver = new EdgeDriver(eo);
-		            break;
-//            case "chrome":
-//                ChromeOptions co = new ChromeOptions();
-//                co.addArguments("--disable-notifications","--start-maximized");
-//                if (headless) co.addArguments("--headless=new");
-//                driver = new ChromeDriver(co);
-//                break;
-//
-//            case "edge":
-//                EdgeOptions eo = new EdgeOptions();
-//                eo.addArguments("--disable-notifications","--start-maximized");
-//                if (headless) eo.addArguments("--headless=new");
-//                driver = new EdgeDriver(eo);
-//                break;
+		switch (browserType) {
+		case "chrome":
+			ChromeOptions co = new ChromeOptions();
+			// Add window-size here!
+			co.addArguments("--disable-notifications", "--start-maximized");
+			if (headless)
+				co.addArguments("--headless=new");
+			driver = new ChromeDriver(co);
+			break;
 
-            case "firefox":
-                FirefoxOptions fo = new FirefoxOptions();
-                if (headless) fo.addArguments("-headless=new");
-                driver = new FirefoxDriver(fo);
-                driver.manage().window().maximize();
-                break;
+		case "edge":
+			EdgeOptions eo = new EdgeOptions();
+			// Add window-size here!
+			eo.addArguments("--disable-notifications", "--start-maximized");
+			if (headless)
+				eo.addArguments("--headless=new");
+			driver = new EdgeDriver(eo);
+			break;
 
-            default:
-                throw new IllegalArgumentException("Unsupported browser: " + browser);
-        }
+		default:
+			throw new IllegalArgumentException("Unsupported browser: " + browser);
+		}
 
-        tlDriver.set(driver);
-    }
+		tlDriver.set(driver);
+	}
 
-    public static synchronized WebDriver getDriver() {
-        return tlDriver.get();
-    }
+	public static synchronized WebDriver getDriver() {
+		return tlDriver.get();
+	}
 
-    public static synchronized void quitDriver() {
-        WebDriver driver = tlDriver.get();
-        if (driver != null) {
-            driver.quit();
-            tlDriver.remove();
-        }
-    }
+	public static synchronized void quitDriver() {
+		WebDriver driver = tlDriver.get();
+		if (driver != null) {
+			driver.quit();
+			tlDriver.remove();
+		}
+	}
 }

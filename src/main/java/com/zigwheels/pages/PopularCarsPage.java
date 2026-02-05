@@ -5,6 +5,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -14,30 +15,39 @@ public class PopularCarsPage {
     private final WebDriver driver;
     private final WebDriverWait wait;
 
-    public PopularCarsPage(WebDriver driver, WebDriverWait wait) {
+    public PopularCarsPage(WebDriver driver) {
         this.driver = driver;
-        this.wait = wait;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(15)); // Increased for Edge stability
         PageFactory.initElements(driver, this);
     }
 
     public List<List<String>> scrapeNamesAndPrices() {
         List<List<String>> rows = new ArrayList<>();
-
-        // Jenkins Fix: Wait up to 10-20 seconds for at least one car card to be visible
-        // Without this, findElements returns an empty list immediately if the page is slow.
+        
+        // 1. Define locators
+        By carCardsLocator = By.xpath("//li[contains(@class,'modelItem')]");
+        
         try {
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[contains(@class,'modelItem')]")));
+            // 2. SMART WAIT: Wait until at least one car name link is visible and has text
+            // This replaces Thread.sleep by polling the browser until the data actually exists
+            wait.until(driver -> {
+                List<WebElement> elements = driver.findElements(carCardsLocator);
+                return !elements.isEmpty() && elements.get(0).getText().length() > 0;
+            });
+
+            // 3. Scroll to the container to ensure all dynamic elements load
+            WebElement firstCard = driver.findElement(carCardsLocator);
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", firstCard);
+
         } catch (TimeoutException e) {
-            // Fallback wait for the broader container if the primary one isn't showing
-            try {
-                wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[contains(@href,'/new-cars/')]")));
-            } catch (Exception ignored) {}
+            // If the wait fails, we try one last time to find the items directly before giving up
+            System.out.println("Timed out waiting for car cards to load text.");
         }
 
-        // 1) Try primary card containers
-        List<WebElement> items = driver.findElements(By.xpath("//li[contains(@class,'modelItem')]"));
+        // 4. Scrape the items
+        List<WebElement> items = driver.findElements(carCardsLocator);
 
-        // 2) Fallback: broader container if primary not found
+        // Fallback for different page layouts
         if (items.isEmpty()) {
             items = driver.findElements(By.xpath("//a[contains(@href,'/new-cars/')]/ancestor::*[self::li or self::div][1]"));
         }
@@ -52,45 +62,34 @@ public class PopularCarsPage {
                         ".//a[contains(@class,'ht-name') or contains(@class,'lnk-hvr') or contains(@href,'/new-cars/')]"));
                 String name = nameEl.getText().trim();
 
-                if (name.isEmpty() || seenNames.contains(name)) {
-                    continue; 
-                }
+                if (name.isEmpty() || seenNames.contains(name)) continue;
 
+                // Price lookup
                 String price = "NA";
                 try {
-                    // Price lookup
                     WebElement priceEl = it.findElement(By.xpath(
-                            ".//span[normalize-space(@title)='Ex-Showroom Price' or contains(normalize-space(.),'Ex-Showroom Price') or contains(normalize-space(@class),'price')]"));
-                    String priceText = priceEl.getText().trim();
-                    if (!priceText.isEmpty()) {
-                        price = priceText;
-                    }
-                } catch (NoSuchElementException ignore) {
-                    // Leave price as "NA"
-                }
+                            ".//span[contains(normalize-space(@title),'Price') or contains(normalize-space(.),'Lakh') or contains(normalize-space(@class),'price')]"));
+                    price = priceEl.getText().trim();
+                } catch (NoSuchElementException ignore) {}
 
                 rows.add(List.of(String.valueOf(idx++), name, price));
                 seenNames.add(name);
 
-            } catch (NoSuchElementException ignore) {
-                // Item structure mismatch, skip safely
-            } catch (StaleElementReferenceException sere) {
-                // Page refreshed or shifted, skip this specific card
-            } catch (Exception e) {
-                // Catch-all for unexpected errors while parsing a card
-            }
+            } catch (StaleElementReferenceException e) {
+                // If elements shift, skip this specific row safely
+                continue;
+            } catch (NoSuchElementException ignore) {}
         }
 
         return rows;
     }
 }
 
+//package com.zigwheels.pages;
+
 
 //
-//package com.zigwheels.pages;
-//
 //import org.openqa.selenium.*;
-//import org.openqa.selenium.support.FindBy;
 //import org.openqa.selenium.support.PageFactory;
 //
 //import java.util.ArrayList;
@@ -99,73 +98,67 @@ public class PopularCarsPage {
 //import java.util.Set;
 //
 //public class PopularCarsPage {
-//    private final WebDriver driver;
+//	private final WebDriver driver;
 //
-//    public PopularCarsPage(WebDriver driver) {
-//        this.driver = driver;
-//        PageFactory.initElements(driver, this);
-//    }
+//	public PopularCarsPage(WebDriver driver) {
+//		this.driver = driver;
+//		PageFactory.initElements(driver, this);
+//	}
 //
+//	public List<List<String>> scrapeNamesAndPrices() {
+//		List<List<String>> rows = new ArrayList<>();
 //
-//    public List<List<String>> scrapeNamesAndPrices() {
-//        List<List<String>> rows = new ArrayList<>();
+//		// 1) Try primary card containers
+//		List<WebElement> items = driver.findElements(By.xpath("//li[contains(@class,'modelItem')]"));
 //
-//        // 1) Try primary card containers
-//        List<WebElement> items = driver.findElements(
-//                By.xpath("//li[contains(@class,'modelItem')]")
-//        );
+//		// 2) Fallback: broader container if primary not found
+//		if (items.isEmpty()) {
+//			items = driver
+//					.findElements(By.xpath("//a[contains(@href,'/new-cars/')]/ancestor::*[self::li or self::div][1]"));
+//		}
 //
-//        // 2) Fallback: broader container if primary not found
-//        if (items.isEmpty()) {
-//            items = driver.findElements(
-//                    By.xpath("//a[contains(@href,'/new-cars/')]/ancestor::*[self::li or self::div][1]")
-//            );
-//        }
+//		int idx = 1;
+//		Set<String> seenNames = new HashSet<>();
 //
-//        int idx = 1;
-//        Set<String> seenNames = new HashSet<>();
+//		for (WebElement it : items) {
+//			try {
+//				// RELATIVE lookup: note the leading dot in .//
+//				// Name: be tolerant with classes and pick the first link that looks like the
+//				// model name
+//				WebElement nameEl = it.findElement(By.xpath(
+//						".//a[contains(@class,'ht-name') or contains(@class,'lnk-hvr') or contains(@href,'/new-cars/')]"));
+//				String name = nameEl.getText().trim();
 //
-//        for (WebElement it : items) {
-//            try {
-//                // RELATIVE lookup: note the leading dot in .//
-//                // Name: be tolerant with classes and pick the first link that looks like the model name
-//                WebElement nameEl = it.findElement(By.xpath(
-//                        ".//a[contains(@class,'ht-name') or contains(@class,'lnk-hvr') or contains(@href,'/new-cars/')]"
-//                ));
-//                String name = nameEl.getText().trim();
+//				if (name.isEmpty() || seenNames.contains(name)) {
+//					continue; // skip blanks and duplicates
+//				}
 //
-//                if (name.isEmpty() || seenNames.contains(name)) {
-//                    continue; // skip blanks and duplicates
-//                }
+//				String price = "NA";
+//				try {
+//					// Price: normalize title (avoid leading/trailing spaces)
+//					WebElement priceEl = it.findElement(By.xpath(
+//							".//span[normalize-space(@title)='Ex-Showroom Price' or contains(normalize-space(.),'Ex-Showroom Price') or contains(normalize-space(@class),'price')]"));
+//					String priceText = priceEl.getText().trim();
+//					if (!priceText.isEmpty()) {
+//						price = priceText;
+//					}
+//				} catch (NoSuchElementException ignore) {
+//					// Leave price as "NA"
+//				}
 //
-//                String price = "NA";
-//                try {
-//                    // Price: normalize title (avoid leading/trailing spaces)
-//                    WebElement priceEl = it.findElement(By.xpath(
-//                            ".//span[normalize-space(@title)='Ex-Showroom Price' or contains(normalize-space(.),'Ex-Showroom Price') or contains(normalize-space(@class),'price')]"
-//                    ));
-//                    String priceText = priceEl.getText().trim();
-//                    if (!priceText.isEmpty()) {
-//                        price = priceText;
-//                    }
-//                } catch (NoSuchElementException ignore) {
-//                    // Leave price as "NA"
-//                }
+//				rows.add(List.of(String.valueOf(idx++), name, price));
+//				seenNames.add(name);
 //
-//                rows.add(List.of(String.valueOf(idx++), name, price));
-//                seenNames.add(name);
-//
-//            } catch (NoSuchElementException ignore) {
-//                // This item doesn't have a name in the expected structure; skip
-//            } catch (StaleElementReferenceException sere) {
-//                // The page updated; skip this card safely
-//            } catch (Exception e) {
+//			} catch (NoSuchElementException ignore) {
+//				// This item doesn't have a name in the expected structure; skip
+//			} catch (StaleElementReferenceException sere) {
+//				// The page updated; skip this card safely
+//			} catch (Exception e) {
 ////                .debug("Item parse error: {}", e.getMessage());
-//            }
-//        }
+//			}
+//		}
 //
-//        return rows;
-//    }
-//
+//		return rows;
+//	}
 //
 //}

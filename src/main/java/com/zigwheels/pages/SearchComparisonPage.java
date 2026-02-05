@@ -15,103 +15,87 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SearchComparisonPage {
-    private final WebDriver driver;
-    private final WebDriverWait wait;
+	private final WebDriver driver;
+	private final WebDriverWait wait;
 
-    public SearchComparisonPage(WebDriver driver, WebDriverWait wait) {
-        this.driver = driver;
-        this.wait = wait;
-        PageFactory.initElements(driver, this);
-    }
+	public SearchComparisonPage(WebDriver driver, WebDriverWait wait) {
+		this.driver = driver;
+		this.wait = wait;
+		PageFactory.initElements(driver, this);
+	}
 
-    @FindBy(id = "homeSearch")
-    private WebElement searchBox;
+	@FindBy(id = "homeSearch")
+	private WebElement searchBox;
 
-    @FindBy(xpath = "//button[@class='btn search-r-btn']")
-    private WebElement searchBtn;
+	@FindBy(xpath = "//button[@class='btn search-r-btn']")
+	private WebElement searchBtn;
 
-    @FindBy(linkText = "All Mercedes-Benz Cars")
-    private WebElement allCarsLink;
-    
-    @FindBy(xpath = "//div[@id='comparisons-container']")
-    private WebElement hover;
+	@FindBy(linkText = "All Mercedes-Benz Cars")
+	private WebElement allCarsLink;
 
-    @FindBy(linkText = "GLS vs XC90")
-    private WebElement comparisonLink;
-    
-    @FindBy(xpath = "//a[@id='Engine']")
-    private WebElement engineLink;
+	@FindBy(xpath = "//div[@id='comparisons-container']")
+	private WebElement hover;
 
-    public void searchCar(String brand) {
-        searchBox.sendKeys(brand);
-        searchBtn.click();
-    }
+	@FindBy(linkText = "GLS vs XC90")
+	private WebElement comparisonLink;
 
-    public void navigateToComparison() throws InterruptedException {
-        try {
-            if (allCarsLink.isDisplayed()) {
-                allCarsLink.click();
-            }
-        } catch (Exception ignored) {}
+	@FindBy(xpath = "//a[@id='Engine']")
+	private WebElement engineLink;
 
-        // Scroll into view
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView(true);", hover);
-        
-        // 1. Wait until the link is present in the DOM
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.linkText("GLS vs XC90")));
+	public void searchCar(String brand) {
+		searchBox.sendKeys(brand);
+		searchBtn.click();
+	}
 
-        // 2. Use JavaScript to click (This avoids "ElementClickInterceptedException")
-        js.executeScript("arguments[0].click();", comparisonLink);
-   
-        // 3. Continue with the rest of your code
-        Actions actions = new Actions(driver);
-        actions.scrollToElement(engineLink).perform();
-    }
-//    public void navigateToComparison() throws InterruptedException {
-//        try {
-//            if (allCarsLink.isDisplayed()) {
-//                allCarsLink.click();
-//            }
-//        } catch (Exception ignored) {}
-//
-//        JavascriptExecutor js = (JavascriptExecutor) driver;
-//        js.executeScript("arguments[0].scrollIntoView(true);", hover);
-//         
-//        wait.until(ExpectedConditions.elementToBeClickable(comparisonLink));
-//        comparisonLink.click();
-//   
-//        Actions actions = new Actions(driver);
-//        actions.scrollToElement(engineLink).perform();
-//    }
+	public void navigateToComparison() throws InterruptedException {
+		try {
+			if (allCarsLink.isDisplayed()) {
+				allCarsLink.click();
+			}
+		} catch (Exception ignored) {
+		}
 
-    public List<List<String>> scrapeComparisonTable() {
-        List<List<String>> data = new ArrayList<>();
-        
-        // 1. Find the total number of rows first
-        By rowLocator = By.xpath("//div[@id='summary']//tr");
-        int rowCount = driver.findElements(rowLocator).size();
+		// Scroll into view
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", hover);
 
-        for (int i = 0; i < rowCount; i++) {
-            try {
-                // 2. Re-find the specific row inside the loop so it's always "fresh"
-                WebElement currentRow = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(rowLocator)).get(i);
-                
-                // 3. Find cells relative to the fresh row
-                List<WebElement> cells = currentRow.findElements(By.xpath("./td[not(contains(@class,'feature')) and not(position()=1)]"));
-                
-                List<String> rowValues = new ArrayList<>();
-                for (WebElement cell : cells) {
-                    rowValues.add(cell.getText().trim());
-                }
-                
-                if (!rowValues.isEmpty()) {
-                    data.add(rowValues);
-                }
-            } catch (StaleElementReferenceException e) {
-                i--; 
-            }
-        }
-        return data;
-    }
+		// 1. Wait until the link is present in the DOM
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.linkText("GLS vs XC90")));
+
+		// 2. Use JavaScript to click (This avoids "ElementClickInterceptedException")
+		js.executeScript("arguments[0].click();", comparisonLink);
+
+		// 3. Continue with the rest of your code
+		Actions actions = new Actions(driver);
+		actions.scrollToElement(engineLink).perform();
+	}
+
+	public List<List<String>> scrapeComparisonTable() {
+	    List<List<String>> data = new ArrayList<>();
+	    By rowLocator = By.xpath("//div[@id='summary']//tr");
+	    int rowCount = driver.findElements(rowLocator).size();
+
+	    for (int i = 0; i < rowCount; i++) {
+	        try {
+	            // Re-find the row to avoid "Stale" errors
+	            WebElement currentRow = driver.findElements(rowLocator).get(i);
+
+	            // SIMPLIFIED: Grabs all cells (th and td) without skipping any
+	            List<WebElement> cells = currentRow.findElements(By.xpath("./th | ./td"));
+
+	            List<String> rowValues = new ArrayList<>();
+	            for (WebElement cell : cells) {
+	                rowValues.add(cell.getText().trim());
+	            }
+
+	            if (!rowValues.isEmpty()) {
+	                data.add(rowValues);
+	            }
+	        } catch (Exception e) {
+	            // If the page flickers, try this row one more time
+	            i--; 
+	        }
+	    }
+	    return data;
+	}
 }
