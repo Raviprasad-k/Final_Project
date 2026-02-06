@@ -1,0 +1,51 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'Maven_3.9.6'   // Name must match Maven tool configured in Jenkins
+        jdk 'JDK17'           // Name must match JDK tool configured in Jenkins
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/Raviprasad-k/Final_Project.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                bat 'mvn clean install -DskipTests'
+            }
+        }
+
+        stage('Run TestNG Tests') {
+            steps {
+                bat 'mvn test'
+            }
+        }
+    }
+
+    post {
+        always {
+            // Archive Extent Report so you can download it from Jenkins
+            archiveArtifacts artifacts: 'target/ExtentReport.html', fingerprint: true
+        }
+        success {
+            emailext(
+                to: 'kummariraviprasad0@gmail.com',
+                subject: "✅ TestNG Automation Passed",
+                body: "All tests passed successfully. Please find the attached Extent Report.",
+                attachmentsPattern: 'target/ExtentReport.html'
+            )
+        }
+        failure {
+            emailext(
+                to: 'kummariraviprasad0@gmail.com',
+                subject: "❌ TestNG Automation Failed",
+                body: "Some tests failed. Please check the attached Extent Report.",
+                attachmentsPattern: 'target/ExtentReport.html'
+            )
+        }
+    }
+}
